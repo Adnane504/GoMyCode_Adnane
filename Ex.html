@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Changer de couleur</title>
+</head>
+<body>
+ <h1>Exercice 3 : Changeur de couleur</h1>
+
+ <input type="number" id="nombre1" placeholder="Premier nombre">
+ <input type="number" id="nombre2" placeholder="Deuxième nombre">
+
+ <button id="btnRouge">Rouge</button>
+ <button id="btnVert">Vert</button>
+ <button id="btnBleu">Bleu</button>
+ <button id="btnJaune">Jaune</button>
+ <button id="btnAleatoire">A</button>
+
+ <p>Résultat : <span id="resultat">0</span></p>
+ <script>
+ // Écrire le code ici :
+ // 1. Récupérer les valeurs des inputs
+ // 2. Faire le calcul selon le bouton cliqué
+ // 3. Afficher le résultat
+
+const num1 = document.getElementById('nombre1');
+const num2 = document.getElementById('nombre2');
+
+const resultat = document.getElementById("resultat");
+
+const bouton=document.getElementById("btnAddition")
+
+bouton.addEventListener("click", function() {
+    resultat.textContent = Number(num1.value) + Number(num2.value);
+});    
+ </script>
+</body>
+</html>

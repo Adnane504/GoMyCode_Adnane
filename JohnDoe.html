@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        nav {
+            background: #333;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 2rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #007bff;
+        }
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            scroll-margin-top: 80px;
+        }
+        #home {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        #about {
+            background: #f8f9fa;
+        }
+        #work {
+            background: white;
+        }
+        #resume {
+            background: #f8f9fa;
+        }
+        #contact {
+            background: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .video-container video,
+        .video-container audio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .work-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .work-item:hover {
+            transform: translateY(-5px);
+        }
+        .skills-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .skills-table th,
+        .skills-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .skills-table th {
+            background: #007bff;
+            color: white;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        form input,
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        form button {
+            background: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        form button:hover {
+            background: #0056b3;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <h1>John Doe</h1>
+            <p style="font-size: 1.5rem;">Full Stack Developer & Designer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem;">
+                I'm a passionate full stack developer with 5+ years of experience creating beautiful, 
+                responsive web applications. I specialize in modern JavaScript frameworks and love 
+                bringing ideas to life through clean, efficient code.
+            </p>
+            
+            <!-- Video Element -->
+            <div class="video-container">
+                <video controls poster="https://via.placeholder.com/800x450/007bff/ffffff?text=Portfolio+Demo">
+                    <source src="demo-video.mp4" type="video/mp4">
+                    <source src="demo-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Audio Element -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <audio controls style="width: 300px;">
+                    <source src="intro-music.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Intro Music - My Portfolio Journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work">
+        <div class="container">
+            <h2>My Work</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-stack e-commerce solution built with React, Node.js, and MongoDB.</p>
+                    <ul>
+                        <li>React & Redux</li>
+                        <li>Node.js & Express</li>
+                        <li>MongoDB</li>
+                        <li>Stripe Payments</li>
+                    </ul>
+                    <a href="#" style="color: #007bff; text-decoration: none;">View Project →</a>
+                </div>
+                <div class="work-item">
+                    <h3>Task Management App</h3>
+                    <p>Real-time collaborative task manager with drag-and-drop functionality.</p>
+                    <ul>
+                        <li>Vue.js</li>
+                        <li>Socket.io</li>
+                        <li>PostgreSQL</li>
+                        <li>Drag & Drop API</li>
+                    </ul>
+                    <a href="#" style="color: #007bff; text-decoration: none;">View Project →</a>
+                </div>
+                <div class="work-item">
+                    <h3>Portfolio Dashboard</h3>
+                    <p>Personal finance dashboard with data visualization and analytics.</p>
+                    <ul>
+                        <li>Angular</li>
+                        <li>D3.js Charts</li>
+                        <li>Firebase</li>
+                        <li>PWA Features</li>
+                    </ul>
+                    <a href="#" style="color: #007bff; text-decoration: none;">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            
+            <h3 style="margin-bottom: 1rem;">Skills</h3>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Technologies</th>
+                        <th>Proficiency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frontend</td>
+                        <td>HTML5, CSS3, JavaScript, React, Vue, Angular</td>
+                        <td>Expert</td>
+                    </tr>
+                    <tr>
+                        <td>Backend</td>
+                        <td>Node.js, Express, Python, Django, PHP</td>
+                        <td>Advanced</td>
+                    </tr>
+                    <tr>
+                        <td>Database</td>
+                        <td>MongoDB, PostgreSQL, MySQL, Redis</td>
+                        <td>Advanced</td>
+                    </tr>
+                    <tr>
+                        <td>Tools</td>
+                        <td>Git, Docker, AWS, Figma, Webpack</td>
+                        <td>Proficient</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin: 3rem 0 1rem 0;">Experience</h3>
+            <ul style="max-width: 800px; margin: 0 auto;">
+                <li><strong>Senior Developer</strong> - TechCorp (2021-Present)</li>
+                <li><strong>Full Stack Developer</strong> - WebSolutions (2019-2021)</li>
+                <li><strong>Frontend Developer</strong> - StartupX (2018-2019)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select a subject</option>
+                    <option value="job">Job Opportunity</option>
+                    <option value="project">Project Collaboration</option>
+                    <option value="consulting">Consulting</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>John Doe</h3>
+            <p>&copy; 2024 All rights reserved. Made with ❤️ for web development.</p>
+            <ul class="social-links">
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
